@@ -2,21 +2,21 @@ package com.example.project.Domain;
 
 import java.io.Serializable;
 
-public class FoodDomain implements Serializable {
+public class SushiDomain implements Serializable {
     private String title;
     private String pic;
     private String description;
     private int fee;
     private int numberInCart;
 
-    public FoodDomain(String title, String pic, String description, int fee) {
+    public SushiDomain(String title, String pic, String description, int fee) {
         this.title = title;
         this.pic = pic;
         this.description = description;
         this.fee = fee;
     }
 
-    public FoodDomain(String title, String pic, String description, int fee, int numberInCart) {
+    public SushiDomain(String title, String pic, String description, int fee, int numberInCart) {
         this.title = title;
         this.pic = pic;
         this.description = description;

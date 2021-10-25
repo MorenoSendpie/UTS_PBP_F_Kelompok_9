@@ -12,32 +12,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.project.Activity.ShowDetailActivity;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.SushiDomain;
 import com.example.project.R;
 
 import java.util.ArrayList;
 
-public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
-    ArrayList<FoodDomain> foodDomains;
+public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
+    ArrayList<SushiDomain> sushiDomains;
 
-    public PopularAdapter(ArrayList<FoodDomain> FoodDomains) {
-        this.foodDomains = FoodDomains;
+    public MenuAdapter(ArrayList<SushiDomain> SushiDomains) {
+        this.sushiDomains = SushiDomains;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_popular, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_menu, parent, false);
 
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(foodDomains.get(position).getTitle());
-        holder.fee.setText(String.valueOf(foodDomains.get(position).getFee()));
+        holder.title.setText(sushiDomains.get(position).getTitle());
+        holder.fee.setText(String.valueOf(sushiDomains.get(position).getFee()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(sushiDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
@@ -47,7 +47,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-                intent.putExtra("object", foodDomains.get(position));
+                intent.putExtra("object", sushiDomains.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -57,7 +57,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return foodDomains.size();
+        return sushiDomains.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

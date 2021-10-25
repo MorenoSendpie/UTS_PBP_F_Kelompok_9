@@ -28,7 +28,7 @@ public class CartListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_list);
+        setContentView(R.layout.activity_cart_list);
         Button checkoutBtn = findViewById(R.id.checkoutBtn);
 
         managementCart = new ManagementCart(this);
@@ -49,7 +49,7 @@ public class CartListActivity extends AppCompatActivity {
 
     private void bottomNavigation() {
         LinearLayout profilBtn = findViewById(R.id.profilBtn);
-        LinearLayout card_btn = findViewById(R.id.card_btn);
+        LinearLayout cartBtn = findViewById(R.id.cartBtn);
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
 
         profilBtn.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class CartListActivity extends AppCompatActivity {
             }
         });
 
-        card_btn.setOnClickListener(new View.OnClickListener() {
+        cartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartListActivity.this, CartListActivity.class));

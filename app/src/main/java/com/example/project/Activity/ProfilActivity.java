@@ -45,7 +45,7 @@ public class ProfilActivity extends AppCompatActivity {
 
     private void bottomNavigation() {
         LinearLayout profilBtn = findViewById(R.id.profilBtn);
-        LinearLayout card_btn = findViewById(R.id.card_btn);
+        LinearLayout cartBtn = findViewById(R.id.cartBtn);
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
 
         profilBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class ProfilActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfilActivity.this, ProfilActivity.class));
             }
         });
-        card_btn.setOnClickListener(new View.OnClickListener() {
+        cartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ProfilActivity.this, CartListActivity.class));
